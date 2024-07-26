@@ -1,0 +1,15 @@
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            11 = EXT:tailwind_styled_content/Configuration/Ext/Form/Yaml/Setup.yaml
+        }
+    }
+}
+
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            11 = EXT:tailwind_styled_content/Configuration/Ext/Form/Yaml/Setup.yaml
+        }
+    }
+}

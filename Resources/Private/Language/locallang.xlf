@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:tailwind_styled_content/Resources/Private/Language/locallang.xlf" date="2024-07-13T20:22:32Z" product-name="tailwind_styled_content">
+		<header/>
+		<body>
+			<trans-unit id="toTop" resname="toTop">
+				<source>To top</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

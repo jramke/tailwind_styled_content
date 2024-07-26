@@ -1,0 +1,32 @@
+# Include setup
+@import './Helper/ContentElement.typoscript'
+@import './Helper/ParseFunc.typoscript'
+
+# Typical content elements
+@import './ContentElement/List.typoscript'
+@import './ContentElement/Shortcut.typoscript'
+@import './ContentElement/Header.typoscript'
+@import './ContentElement/Text.typoscript'
+@import './ContentElement/Image.typoscript'
+@import './ContentElement/Textmedia.typoscript'
+@import './ContentElement/Div.typoscript'
+@import './ContentElement/Html.typoscript'
+@import './ContentElement/Uploads.typoscript'
+
+# Menu content elements
+@import './ContentElement/MenuAbstract.typoscript'
+@import './ContentElement/MenuCategorizedContent.typoscript'
+@import './ContentElement/MenuCategorizedPages.typoscript'
+@import './ContentElement/MenuPages.typoscript'
+@import './ContentElement/MenuSubpages.typoscript'
+@import './ContentElement/MenuSection.typoscript'
+@import './ContentElement/MenuSectionPages.typoscript'
+@import './ContentElement/MenuRecentlyUpdated.typoscript'
+@import './ContentElement/MenuRelatedPages.typoscript'
+@import './ContentElement/MenuSitemap.typoscript'
+@import './ContentElement/MenuSitemapPages.typoscript'
+
+
+# Form definition
+@import 'EXT:tailwind_styled_content/Configuration/Ext/Form/TypoScript/setup.typoscript'
+

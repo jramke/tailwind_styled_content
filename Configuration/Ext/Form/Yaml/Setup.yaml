@@ -1,0 +1,173 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              variants:
+                -
+                  renderingOptions:
+                    fieldProperties:
+                      descriptionClassAttribute: 'form-text'
+                      errorClassAttribute: 'peer [&_input]:input-error [&_[type=checkbox]]:checkbox-error [&_[type=file]]:file-input-error [&_[type=radio]]:radio-error [&_select]:select-error [&_textarea]:textarea-error'
+                      errorMsgClassAttribute: 'label label-text-alt justify-start text-error peer-[.form-control]:-mt-4'
+                      requiredMarkClassAttribute: 'required'
+                      visuallyHiddenClassAttribute: 'sr-only'
+            SummaryPage:
+              variants:
+                -
+                  renderingOptions:
+                    listRowClassAttribute: 'grid grid-cols-2 gap-4'
+
+            # Form elements
+            AdvancedPassword:
+              variants:
+                -
+                  properties:
+                    fieldsetClassAttribute: 'form-control form-element-advancedpassword mb-4'
+                    containerClassAttribute: 'form-control mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    confirmationClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+                    renderFieldset: 0
+            Checkbox:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-checkbox mb-4'
+                    elementClassAttribute: 'checkbox'
+                    labelTextClassAttribute: 'label-text'
+                    labelClassAttribute: 'label cursor-pointer justify-start gap-2'
+            ContentElement:
+              variants:
+                1:
+                  properties:
+                    outerContainerClassAttribute: 'mb-4 [&_.container]:max-w-none [&_.frame]:py-0'
+            CountrySelect:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-select mb-4'
+                    elementClassAttribute: 'select select-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            Date:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-date mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            DatePicker:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-date mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            SingleSelect:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-select mb-4'
+                    elementClassAttribute: 'select select-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            StaticText:
+              variants:
+                1:
+                  properties:
+                    containerClassAttribute: 'form-element-statictext mb-4 [&>h2]:font-bold [&>h2]:text-base [&>h2]:mb-1 [&>p]:label-text'
+            Email:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-email mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            Fieldset:
+              variants:
+                -
+                  properties:
+                    elementClassAttribute: 'form-element-fieldset mb-4 [&>legend]:font-bold'
+            FileUpload:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-fileupload mb-4'
+                    elementClassAttribute: 'file-input file-input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            ImageUpload:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-imageupload mb-4'
+                    elementClassAttribute: 'file-input file-input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            MultiCheckbox:
+              variants:
+                -
+                  properties:
+                    fieldsetClassAttribute: 'mb-4 [&>legend]:label [&>legend]:label-text [&>legend]:justify-start'
+                    containerClassAttribute: 'form-control form-element-checkbox'
+                    elementClassAttribute: 'checkbox'
+                    labelTextClassAttribute: 'label-text'
+                    labelClassAttribute: 'label cursor-pointer justify-start gap-2'
+            MultiSelect:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-multiselect mb-4'
+                    elementClassAttribute: 'select select-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            Number:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-number mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            Password:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-password mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            RadioButton:
+              variants:
+                -
+                  properties:
+                    fieldsetClassAttribute: 'mb-4 [&>legend]:label [&>legend]:label-text [&>legend]:justify-start'
+                    containerClassAttribute: 'form-control form-element-radio'
+                    elementClassAttribute: 'radio'
+                    labelTextClassAttribute: 'label-text'
+                    labelClassAttribute: 'label cursor-pointer justify-start gap-2'
+            Telephone:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-phone mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            Text:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-text mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            Textarea:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-textarea mb-4'
+                    elementClassAttribute: 'textarea textarea-bordered h-24'
+                    labelClassAttribute: 'label label-text justify-start'
+            Url:
+              variants:
+                -
+                  properties:
+                    containerClassAttribute: 'form-control form-element-url mb-4'
+                    elementClassAttribute: 'input input-bordered'
+                    labelClassAttribute: 'label label-text justify-start'
+            

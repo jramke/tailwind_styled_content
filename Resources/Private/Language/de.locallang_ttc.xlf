@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:tailwind_styled_content/Resources/Private/Language/locallang_ttc.xlf" date="2024-07-13T20:22:32Z" product-name="tailwind_styled_content">
+		<header/>
+		<body>
+			<trans-unit id="imageorient.I.35" resname="imageorient.I.35">
+				<target>Neben den Text zentriert, rechts</target>
+			</trans-unit>
+			<trans-unit id="imageorient.I.36" resname="imageorient.I.36">
+				<target>Neben dem Text zentriert, links</target>
+			</trans-unit>
+
+			<trans-unit id="frame_class.reading" resname="frame_class.reading">
+				<target>Lesebreite</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:tsc="http://typo3.org/ns/Jramke/TailwindStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{gallery.rows}">
+
+    <f:variable name="imagecols">{data.imagecols}</f:variable>
+    <f:if condition="{data.imagecols} == 0">
+        <f:if condition="{gallery.count.files} > 6">
+            <f:then>
+                <f:variable name="imagecols">6</f:variable>
+            </f:then>
+            <f:else>
+                <f:variable name="imagecols">{gallery.count.files}</f:variable>
+            </f:else>
+        </f:if>
+    </f:if>
+
+    <div class="grid grid-cols-1 sm:grid-cols-{tsc:min(value: '{imagecols},2')} md:grid-cols-{tsc:min(value: '{imagecols},3')} lg:grid-cols-{imagecols} gap-8" data-columns="{imagecols}" data-images="{gallery.count.files}">
+        <f:for each="{gallery.rows}" as="row">
+            <f:for each="{row.columns}" as="column">
+                <f:if condition="{column.media}">
+                    <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                </f:if>
+            </f:for>
+        </f:for>
+    </div>
+
+</f:if>
+</html>

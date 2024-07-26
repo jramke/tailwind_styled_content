@@ -1,0 +1,30 @@
+{
+    "name": "jramke/tailwind-styled-content",
+    "type": "typo3-cms-extension",
+    "version": "0.0.1",
+    "description": "Fluid templates for TYPO3 content elements with Tailwind CSS.",
+    "license": [
+		"GPL-2.0-or-later"
+	],
+    "authors": [
+        {
+            "name": "Joost Ramke",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+		"typo3/cms-core": "^11.5 || ^12.4 || ^13.0 || dev-main",
+		"typo3/cms-fluid": "^11.5 || ^12.4 || ^13.0 || dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jramke\\TailwindStyledContent\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "tailwind_styled_content"
+        }
+    }
+}

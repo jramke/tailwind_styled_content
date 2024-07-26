@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Header" />
+<f:section name="Main">
+
+    <f:variable name="textFirst">{f:if(condition: '{data.imageorient} == 25 || {data.imageorient} == 35 || {data.imageorient} == 8 || {data.imageorient} == 10', then: '1', else: '0')}</f:variable>
+    <f:variable name="center">{f:if(condition: '{data.imageorient} == 35 || {data.imageorient} == 36 || {data.imageorient} == 0 || {data.imageorient} == 8', then: '1', else: '0')}</f:variable>
+    <f:variable name="2cols">{f:if(condition: '{data.imageorient} > 10', then: '1', else: '0')}</f:variable>
+
+    <f:comment>We use the join ViewHelper to improve readability and ensure that the classes can be rendered without line breaks using the spaceless ViewHelper</f:comment>
+    <f:variable name="gridClass">
+        <f:join value="{
+            0: 'grid gap-8', 
+            1: '{f:if(condition: \'{center} && {2cols}\', then: \' items-center\')}', 
+            2: '{f:if(condition: \'{center} && !{2cols}\', then: \' justify-items-center\')}', 
+            3: '{f:if(condition: \'{2cols}\', then: \' lg:grid-cols-2\')}'
+        }" />
+    </f:variable>
+
+    <f:variable name="textClass">
+        <f:join value="{
+            0: '{f:if(condition: \'{2cols}\', then: \' lg:w-5/6\')}', 
+            1: '{f:if(condition: \'!{textFirst} && {2cols}\', then: \' lg:order-1 lg:ml-auto\')}', 
+            2: '{f:if(condition: \'!{textFirst} && !{2cols}\', then: \' order-1\')}', 
+        }" />
+    </f:variable>
+
+    <div class="{gridClass -> f:spaceless()}">
+        <f:if condition="{data.bodytext} || {data.header} || {data.subheader} || {data.date}">
+            <div class="{textClass -> f:spaceless()}">
+                <f:render partial="Header/All" arguments="{_all}" />
+                <f:if condition="{data.bodytext}">
+                    <f:render partial="Prose" contentAs="content">
+                        {data.bodytext -> f:format.html()}
+                    </f:render>
+                </f:if>
+            </div>  
+        </f:if>
+        <f:render partial="Media/Gallery" arguments="{_all}" />
+    </div>
+
+</f:section>
+</html>
