@@ -1,5 +1,13 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:tsc="http://typo3.org/ns/Jramke/TailwindStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
-<figure>
+
+<f:variable name="class">
+    <f:join value="{
+        0: '{f:if(condition: \'{data.imageorient} == 0\', then: \' text-center [&_img]:mx-auto\')}', 
+        1: '{f:if(condition: \'{data.imageorient} == 1\', then: \' text-end [&_img]:ml-auto [&_img]:mr-0\')}',
+    }" />
+</f:variable>
+
+<figure {f:if(condition: '{data.imagewidth} || {data.imageheight}', then: 'class="{class -> f:spaceless()}"')}>
     <f:if condition="{file.link}">
         <f:then>
             <f:link.typolink parameter="{file.link}" title="{file.title}">

@@ -1,19 +1,28 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:tsc="http://typo3.org/ns/Jramke/TailwindStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="Header" />
 <f:section name="Main">
 
-    <f:variable name="textFirst">{f:if(condition: '{data.imageorient} == 25 || {data.imageorient} == 35 || {data.imageorient} == 8 || {data.imageorient} == 10', then: '1', else: '0')}</f:variable>
-    <f:variable name="center">{f:if(condition: '{data.imageorient} == 35 || {data.imageorient} == 36 || {data.imageorient} == 0 || {data.imageorient} == 8', then: '1', else: '0')}</f:variable>
+    <f:variable name="textFirst">{tsc:inList(needle: data.imageorient, haystack: '25,35,8,9,10')}</f:variable>
+    <f:variable name="center">{tsc:inList(needle: data.imageorient, haystack: '35,36,0,8')}</f:variable>
+    <f:variable name="right">{tsc:inList(needle: data.imageorient, haystack: '1,9')}</f:variable>
     <f:variable name="2cols">{f:if(condition: '{data.imageorient} > 10', then: '1', else: '0')}</f:variable>
 
-    <f:comment>We use the join ViewHelper to improve readability and ensure that the classes can be rendered without line breaks using the spaceless ViewHelper</f:comment>
     <f:variable name="gridClass">
         <f:join value="{
             0: 'grid gap-8', 
-            1: '{f:if(condition: \'{center} && {2cols}\', then: \' items-center\')}', 
-            2: '{f:if(condition: \'{center} && !{2cols}\', then: \' justify-items-center\')}', 
-            3: '{f:if(condition: \'{2cols}\', then: \' lg:grid-cols-2\')}'
+            1: '{f:if(condition: \'{2cols}\', then: \' lg:grid-cols-2\')}',
+            2: '{f:if(condition: \'{center}\', then: \' lg:place-items-center\')}',
+        }" />
+    </f:variable>
+
+    <f:variable name="galleryClass">
+        <f:join value="{
+            0: 'flex',
+            1: '{f:if(condition: \'{center} && {2cols}\', then: \' lg:justify-center\')}', 
+            2: '{f:if(condition: \'{right} && {2cols}\', then: \' lg:justify-end\')}',
+            3: '{f:if(condition: \'{center} && !{2cols}\', then: \' justify-center\')}', 
+            4: '{f:if(condition: \'{right} && !{2cols}\', then: \' justify-end\')}',
         }" />
     </f:variable>
 
@@ -36,7 +45,9 @@
                 </f:if>
             </div>  
         </f:if>
-        <f:render partial="Media/Gallery" arguments="{_all}" />
+        <div class="{galleryClass -> f:spaceless()}">
+            <f:render partial="Media/Gallery" arguments="{_all}" />
+        </div>
     </div>
 
 </f:section>

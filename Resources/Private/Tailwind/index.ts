@@ -1,9 +1,9 @@
-import tscPlugin from './src/plugin';
-import tscPreset from './src/preset';
-import tscSafelist from './src/safelist';
+import plugin from './Src/Plugin';
+import safelist from './Src/Safelist';
+import preset from './Src/Preset';
 
 export {
-    tscPlugin,
-    tscPreset,
-    tscSafelist,
+    plugin,
+    safelist,
+    preset,
 };

@@ -6,9 +6,3 @@ services:
 
   Jramke\TailwindStyledContent\:
     resource: '../Classes/*'
-
-  Jramke\TailwindStyledContent\Command\TailwindConfigCommand:
-    tags:
-      - name: console.command
-        command: 'tailwind:config'
-        description: 'Generates a boilerplate tailwind config file'

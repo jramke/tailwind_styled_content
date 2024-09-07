@@ -18,21 +18,25 @@ TCEFORM {
         }
 
         // Add a container width option for better readability of plain text content
+        // Remove other options as they are redundant and not suitable for container modifications
         frame_class {
+            removeItems = indent, ruler-before, ruler-after
             addItems {
                 max-w-reading = LLL:EXT:tailwind_styled_content/Resources/Private/Language/locallang_ttc.xlf:frame_class.reading
+                full = LLL:EXT:tailwind_styled_content/Resources/Private/Language/locallang_ttc.xlf:frame_class.full
             }
         }
 
-        //  Remove unnecessary imagecols options to reduce bundle size, did you ever used 7 or 8 columns?
+        // Remove unnecessary imagecols options to reduce bundle size, did you ever used 7 or 8 columns?
         // And add 0 for automatic calculation and default
         imagecols.removeItems = 7,8
         imagecols.addItems {
             0 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:cols.I.0
         }
 
-        // Rmove images below/bottom right and inside text orients or are you still floating in the 10s?
-        imageorient.removeItems = 1,18,17,9 
+        // Remove images inside text
+        // Add centered beside image options
+        imageorient.removeItems = 18,17
         imageorient.types.textmedia {
             addItems {
                 35 = LLL:EXT:tailwind_styled_content/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.35
@@ -41,12 +45,6 @@ TCEFORM {
                 36.icon = content-beside-text-img-centered-left
             }
         }
-
-        // Remove imageborder option
-        imageborder.disabled = 1
-
-        // Disable imageorient for image/gallery
-        imageorient.types.image.disabled = 1
 
         // Remove h5 heading, h4 is the limit
         header_layout.removeItems = 5

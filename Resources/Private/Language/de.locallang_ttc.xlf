@@ -13,6 +13,9 @@
 			<trans-unit id="frame_class.reading" resname="frame_class.reading">
 				<target>Lesebreite</target>
 			</trans-unit>
+			<trans-unit id="frame_class.full" resname="frame_class.full">
+				<target>Volle Breite</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -1,23 +1,22 @@
-function safelistGenerator(minGridCols: number, maxGridCols: number) {
-    let gridSafelistEntry: any;
+function safelistGrid(minGridCols: number, maxGridCols: number) {
     let gridColsRegexPatterns: string[] = [];
     for (let i = minGridCols; i <= maxGridCols; i++) {
         gridColsRegexPatterns.push(`(col-span|grid-cols)-${i}`);
     }
 
     if (gridColsRegexPatterns.length > 0) {
-        gridSafelistEntry = { 
+        return { 
             pattern: new RegExp(gridColsRegexPatterns.join('|')),
             variants: ['sm', 'md', 'lg', 'xl', '2xl'],
         };
+    } else {
+        return null;
     }
-
-    return [
-        {
-            pattern: /frame-space-(before|after)-(none|small|large)/,
-        },
-        gridSafelistEntry
-    ]
 };
 
-export default safelistGenerator(1, 12);
+export default [
+    safelistGrid(1, 12),
+    {
+        pattern: /text-(left|center|right)/,
+    },
+];

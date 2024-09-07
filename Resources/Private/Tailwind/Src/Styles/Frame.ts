@@ -1,21 +1,26 @@
 import type { PluginAPI } from "tailwindcss/types/config";
 import type { TscConfig } from "../../types";
 
-export function frameStyles(tscConfig: TscConfig, pluginApi: PluginAPI) {
+export function frameStyles(frameConfig: TscConfig['frame'], pluginApi: PluginAPI) {
+    if (frameConfig === false) {
+        return;
+    }
+
     const { theme, addBase, addComponents } = pluginApi;
 
     const frameVars = {
         ':root': {
-            '--frame-spacing-default': tscConfig.frameSpacing.default,
-            '--frame-spacing-small-multiplier': tscConfig.frameSpacing.multipliers.small,
-            '--frame-spacing-large-multiplier': tscConfig.frameSpacing.multipliers.large,
+            '--frame-spacing-default': frameConfig.default,
+            '--frame-spacing-small-multiplier': frameConfig.multipliers.small,
+            '--frame-spacing-large-multiplier': frameConfig.multipliers.large,
         }
     };
     addBase(frameVars);
 
-    if (tscConfig.frameSpacing.screens) {
-        Object.entries(tscConfig.frameSpacing.screens).forEach(([screen, value]) => {
-            if (!theme('screens')?.[screen] ?? false) {
+    if (frameConfig.screens && Object.keys(frameConfig.screens).length > 0) {
+        Object.entries(frameConfig.screens).forEach(([screen, value]) => {
+            const screens = theme('screens');
+            if (typeof screens === 'undefined' || !(screen in screens)) {
                 console.warn(`Screen ${screen} is not defined in the theme.`);
                 return;
             }
@@ -47,20 +52,20 @@ export function frameStyles(tscConfig: TscConfig, pluginApi: PluginAPI) {
     };
     addComponents(defaultFrame);
     
-    const directions = ['before', 'after'];
+    const directions = ['before', 'after'] as const;
 	const sizes = {
         none: '0px',
 		small: 'calc(var(--frame-spacing-default) / var(--frame-spacing-small-multiplier))',
 		large: 'calc(var(--frame-spacing-default) * var(--frame-spacing-large-multiplier))',
 	};
     
-    const frameSpacingUtilities = {};
+    const frameUtilities = {};
 	directions.forEach((direction) => {
 		Object.entries(sizes).forEach(([size, value]) => {
-			frameSpacingUtilities[`.frame.frame-space-${direction}-${size}`] = {
+			frameUtilities[`.frame.frame-space-${direction}-${size}`] = {
 				[`--frame-spacing-${direction}`]: value,
 			};
 		});
 	});
-    addComponents(frameSpacingUtilities);
+    addComponents(frameUtilities);
 }

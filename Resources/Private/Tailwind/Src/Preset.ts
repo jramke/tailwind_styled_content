@@ -1,3 +1,9 @@
+import type { Config } from 'tailwindcss';
+
+import plugin from './Plugin';
+import typography from '@tailwindcss/typography';
+import daisyui from 'daisyui';
+
 export default {
 	theme: {
 		extend: {
@@ -17,4 +23,9 @@ export default {
             }
 		},
 	},
-};
+	plugins: [
+		typography,
+		daisyui,
+		plugin,
+	],
+} satisfies Omit<Config, "content">;

@@ -1,7 +1,7 @@
 import type { TscConfig } from '../types';
 
 export const defaultConfig: TscConfig = {
-    frameSpacing: {
+    frame: {
         default: '2.5rem',
         screens: {
             lg: '3.5rem',

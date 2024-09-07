@@ -5,9 +5,15 @@ TYPO3:
         standard:
           formElementsDefinition:
             Form:
+              renderingOptions:
+                templateVariant: version2
               variants:
                 -
                   renderingOptions:
+                    formNavigation:
+                      btnNextClassAttribute: 'btn btn-primary'
+                      btnPreviousClassAttribute: 'btn btn-outline btn-primary'
+                      btnSubmitClassAttribute: 'btn btn-primary'
                     fieldProperties:
                       descriptionClassAttribute: 'form-text'
                       errorClassAttribute: 'peer [&_input]:input-error [&_[type=checkbox]]:checkbox-error [&_[type=file]]:file-input-error [&_[type=radio]]:radio-error [&_select]:select-error [&_textarea]:textarea-error'

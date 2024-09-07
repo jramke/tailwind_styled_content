@@ -1,5 +1,13 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<figure>
+
+<f:variable name="class">
+    <f:join value="{
+        0: '{f:if(condition: \'{data.imageorient} == 0\', then: \' text-center [&_video]:mx-auto [&_iframe]:mx-auto\')}', 
+        2: '{f:if(condition: \'{data.imageorient} == 1\', then: \' text-end [&_video]:ml-auto [&_video]:mr-0 [&_iframe]:ml-auto [&_iframe]:mr-0\')}',
+    }" />
+</f:variable>
+
+<figure {f:if(condition: '{data.imagewidth} || {data.imageheight}', then: 'class="{class -> f:spaceless()}"')}>
     <f:if condition="{file.extension}==vimeo || {file.extension}==youtube">
         <f:then>
             <div class="aspect-video relative">

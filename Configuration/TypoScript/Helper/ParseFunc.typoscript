@@ -65,6 +65,7 @@ lib.parseFunc_RTE {
         table {
             stripNL = 1
             stdWrap {
+                wrap = <div class="overflow-x-auto">|</div>
                 HTMLparser = 1
                 HTMLparser {
                     tags.table.fixAttrib.class {

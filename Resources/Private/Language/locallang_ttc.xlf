@@ -13,6 +13,9 @@
 			<trans-unit id="frame_class.reading" resname="frame_class.reading">
 				<source>Reading width</source>
 			</trans-unit>
+			<trans-unit id="frame_class.full" resname="frame_class.full">
+				<source>Full width</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
