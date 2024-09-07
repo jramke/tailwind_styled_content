@@ -2,6 +2,8 @@
 
 A modern replacement for `fluid_styled_content` using Tailwind CSS, providing a better starting point for building websites with TYPO3.
 
+![696shots_so](https://github.com/user-attachments/assets/a2819c93-4682-4e61-9486-03519adad2ad)
+
 ## Whats covered
 
 ### Content Elements
