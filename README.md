@@ -35,7 +35,7 @@ We override the default form element classes via yaml, because they where design
 
 ### Tailwind Plugins and Preset
 
-Tailwind Styled Content comes with a tailwind preset, a safelist which you can directly import from the composer package.
+Tailwind Styled Content comes with a tailwind preset, a safelist and a plugin which you can directly import from the composer package. No need for a additional npm package.
 
 The preset extends the default tailwind theme to make it more suitable for building TYPO3 websites rather than web app interfaces. It also includes the needed plugins. Tailwind Styled Content includes [daisyUI](https://daisyui.com/) plugin which makes tailwind usable for non-component-based JS frameworks and [tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) plugin to enhance the RTE and default heading styling.
 

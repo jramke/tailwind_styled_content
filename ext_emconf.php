@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Tailwind Styled Content',
-    'description' => 'Fluid templates for TYPO3 content elements with Tailwind CSS.',
+    'description' => 'Alternative for fluid_styled_content using Tailwind CSS, providing a clean, robust and modern starting point.',
     'category' => 'templates',
     'version' => '1.0.0',
     'state' => 'beta',
