@@ -114,3 +114,12 @@ tsc: {
 ### Tailwind Typography
 
 For customizing the typography styles you can simply extend your tailwind config or override the `Prose.html` partial in your distribution extension and add the desired element modifiers or other classes. Read more [here](https://tailwindcss.com/docs/typography-plugin).
+
+
+## Development
+
+The development setup is based on this [example](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions).
+TODO: more details
+TODO: we now only need to load the output.css
+TODO: rename tailwind folder to something development enviromentally?
+TODO: add setup vor v11 and v13
