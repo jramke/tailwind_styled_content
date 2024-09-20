@@ -154,8 +154,10 @@ page.includeCSS {
 ```
 
 **4. Start the Tailwind CLI build process**
+
+Replace `[VERSION]` with the installation you want to run this command in. For example `v12`.  
 ```bash
-ddev exec -d /var/www/html/v12 npm run tailwind
+ddev exec -d /var/www/html/[VERSION] npm run tailwind
 ```
 
 
