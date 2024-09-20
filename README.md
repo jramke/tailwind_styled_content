@@ -114,3 +114,46 @@ tsc: {
 ### Tailwind Typography
 
 For customizing the typography styles you can simply extend your tailwind config or override the `Prose.html` partial in your distribution extension and add the desired element modifiers or other classes. Read more [here](https://tailwindcss.com/docs/typography-plugin).
+
+
+## Development
+
+The development setup uses ddev and is based on this [example](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions).
+
+### Start ddev project
+```bash
+ddev start
+```
+
+### TYPO3
+
+**1. Install TYPO3 Development environment in needed version**
+```bash
+ddev install-v11
+ddev install-v12
+ddev install-v13
+```
+The installations are then available under:
+- https://v11.tailwind-styled-content.ddev.site
+- https://v12.tailwind-styled-content.ddev.site
+- https://v13.tailwind-styled-content.ddev.site
+
+**2. Add the Tailwind Styled Content static typoscript file**
+
+**3. Include tailwinds generated css in the TYPO3 page**
+```
+page.includeCSS {
+    tailwind = /output.css
+    tailwind {
+    	disableCompression = 1
+    	excludeFromConcatenation = 1
+    }
+}
+```
+
+**4. Start the Tailwind CLI build process**
+```bash
+ddev exec -d /var/www/html/v12 npm run tailwind
+```
+
+
