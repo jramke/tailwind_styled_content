@@ -9,6 +9,19 @@ composer config extra.typo3/cms.web-dir public -d /var/www/html/$VERSION
 composer config repositories.$EXTENSION_KEY path ../../$EXTENSION_KEY -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/cms-composer-installers true -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/class-alias-loader true -d /var/www/html/$VERSION
+# composer req \
+#     typo3/minimal:'^13.0' \
+#     typo3/cms-cli:'^3.1' \
+#     typo3/cms-rte-ckeditor:'^13.0' \
+#     typo3/cms-belog:'^13.0' \
+#     typo3/cms-beuser:'^13.0' \
+#     typo3/cms-info:'^13.0' \
+#     typo3/cms-lowlevel:'^13.0' \
+#     typo3/cms-setup:'^13.0' \
+#     typo3/cms-tstemplate:'^13.0' \
+#     t3/cli-config:'^1.0' \
+#     $PACKAGE_NAME:'*@dev' \
+#     --no-progress -n -d /var/www/html/$VERSION
 composer req t3/cms:'^13' $PACKAGE_NAME:'*@dev' --no-progress -n -d /var/www/html/$VERSION
 
 cd /var/www/html/$VERSION
@@ -21,6 +34,7 @@ vendor/bin/typo3 configuration:set 'BE/debug' 1
 vendor/bin/typo3 configuration:set 'FE/debug' 1
 vendor/bin/typo3 configuration:set 'SYS/devIPmask' '*'
 vendor/bin/typo3 configuration:set 'SYS/displayErrors' 1
+vendor/bin/typo3 configuration:set 'SYS/trustedHostsPattern' '.*.*'
 vendor/bin/typo3 configuration:set 'MAIL/transport' 'smtp'
 vendor/bin/typo3 configuration:set 'MAIL/transport_smtp_server' 'localhost:1025'
 vendor/bin/typo3 configuration:set 'MAIL/defaultMailFromAddress' 'admin@example.com'
@@ -28,3 +42,11 @@ vendor/bin/typo3 configuration:set 'GFX/processor' 'ImageMagick'
 vendor/bin/typo3 configuration:set 'GFX/processor_path' '/usr/bin/'
 
 vendor/bin/typo3 cache:flush
+
+ln -s ../../tailwind_styled_content/src/tailwind.config.js tailwind.config.js
+ln -s ../../tailwind_styled_content/src/input.css input.css
+ln -s ../../tailwind_styled_content/package.json package.json
+
+ln -s ../../../tailwind_styled_content/src/output.css public/output.css
+
+npm install

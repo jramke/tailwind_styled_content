@@ -118,8 +118,42 @@ For customizing the typography styles you can simply extend your tailwind config
 
 ## Development
 
-The development setup is based on this [example](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions).
-TODO: more details
-TODO: we now only need to load the output.css
-TODO: rename tailwind folder to something development enviromentally?
-TODO: add setup vor v11 and v13
+The development setup uses ddev and is based on this [example](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions).
+
+### Start ddev project
+```bash
+ddev start
+```
+
+### TYPO3
+
+**1. Install TYPO3 Development environment in needed version**
+```bash
+ddev install-v11
+ddev install-v12
+ddev install-v13
+```
+The installations are then available under:
+- https://v11.tailwind-styled-content.ddev.site
+- https://v12.tailwind-styled-content.ddev.site
+- https://v13.tailwind-styled-content.ddev.site
+
+**2. Add the Tailwind Styled Content static typoscript file**
+
+**3. Include tailwinds generated css in the TYPO3 page**
+```
+page.includeCSS {
+    tailwind = /output.css
+    tailwind {
+    	disableCompression = 1
+    	excludeFromConcatenation = 1
+    }
+}
+```
+
+**4. Start the Tailwind CLI build process**
+```bash
+ddev exec -d /var/www/html/v12 npm run tailwind
+```
+
+

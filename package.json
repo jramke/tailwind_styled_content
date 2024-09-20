@@ -5,6 +5,6 @@
     "tailwindcss": "^3.4.12"
   },
   "scripts": {
-    "tailwind": "ls -al && npx tailwindcss -i ./input.css -o ./public/output.css"
+    "tailwind": "npx tailwindcss -i ./input.css -o ./public/output.css --watch"
   }
 }

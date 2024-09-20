@@ -1,4 +1,4 @@
 Documentation-GENERATED-temp
 node_modules
 package-lock.json
-tailwind/output.css
+src/output.css
