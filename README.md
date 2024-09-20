@@ -138,6 +138,8 @@ The installations are then available under:
 - https://v12.tailwind-styled-content.ddev.site
 - https://v13.tailwind-styled-content.ddev.site
 
+You can log into the backend with username `admin` and password `Password1#`.
+
 **2. Add the Tailwind Styled Content static typoscript file**
 
 **3. Include tailwinds generated css in the TYPO3 page**
