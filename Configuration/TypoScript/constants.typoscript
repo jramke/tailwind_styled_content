@@ -11,6 +11,9 @@ styles.content {
     # cat=content/cHeader/h0; type=int[1-5]; label=Default Header type: Enter the number of the header layout to be used by default
     defaultHeaderType = 2
 
+    # cat=content/cHeader/h1; type=string; label=Header ID prefix: This prefix will be used to generate the ID of the headings
+    headerIdPrefix = content-heading-
+
     # cat=content/cShortcut/t0; type=string; label=List of accepted tables
     shortcut.tables = tt_content
 

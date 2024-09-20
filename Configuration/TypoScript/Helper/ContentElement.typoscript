@@ -39,5 +39,6 @@ lib.contentElement {
                 api = 0
             }
         }
+        headerIdPrefix = {$styles.content.headerIdPrefix}
     }
 }

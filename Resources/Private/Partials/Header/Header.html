@@ -13,24 +13,32 @@
 </f:if>
 
 <f:section name="headings">
+    <f:variable name="positionClassAttribute">
+        <f:if condition="{positionClass}">class={positionClass}</f:if>
+    </f:variable>
+
+    <f:variable name="idAttribute">
+        <f:if condition="{id}">id={settings.headerIdPrefix}{id}</f:if>
+    </f:variable>
+
     <f:switch expression="{layout}">
         <f:case value="1">
-            <h1 class="{positionClass}">
+            <h1 {positionClassAttribute} {idAttribute}>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h1>
         </f:case>
         <f:case value="2">
-            <h2 class="{positionClass}">
+            <h2 {positionClassAttribute} {idAttribute}>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h2>
         </f:case>
         <f:case value="3">
-            <h3 class="{positionClass}">
+            <h3 {positionClassAttribute} {idAttribute}>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h3>
         </f:case>
         <f:case value="4">
-            <h4 class="{positionClass}">
+            <h4 {positionClassAttribute} {idAttribute}>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h4>
         </f:case>
@@ -44,6 +52,7 @@
                     layout: default,
                     positionClass: positionClass,
                     withoutProse: 1,
+                    id: id,
                     link: link}" />
             </f:if>
         </f:defaultCase>
