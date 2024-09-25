@@ -48,5 +48,3 @@ ln -s ../../tailwind_styled_content/src/input.css input.css
 ln -s ../../tailwind_styled_content/package.json package.json
 
 ln -s ../../../tailwind_styled_content/src/output.css public/output.css
-
-npm install

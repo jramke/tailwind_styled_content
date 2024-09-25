@@ -125,6 +125,11 @@ The development setup uses ddev and is based on this [example](https://github.co
 ddev start
 ```
 
+### Install JavaScript dependencies
+```bash
+npm install
+```
+
 ### TYPO3
 
 **1. Install TYPO3 Development environment in needed version**
