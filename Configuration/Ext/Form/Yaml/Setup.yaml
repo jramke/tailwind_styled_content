@@ -7,6 +7,8 @@ TYPO3:
             Form:
               renderingOptions:
                 templateVariant: version2
+                partialRootPaths:
+                  20: 'EXT:tailwind_styled_content/Resources/Private/Ext/Form/Partials/'
               variants:
                 -
                   renderingOptions:
@@ -176,4 +178,24 @@ TYPO3:
                     containerClassAttribute: 'form-control form-element-url mb-4'
                     elementClassAttribute: 'input input-bordered'
                     labelClassAttribute: 'label label-text justify-start'
+            GridRow:              
+              variants:
+                -
+                  properties:
+                    elementClassAttribute: 'form-element form-element-gridrow grid gap-x-4'
+                    gridColumnClassAutoConfiguration:
+                      gridSize: 12
+                      viewPorts:
+                        xs:
+                          classPattern: 'col-span-{@numbersOfColumnsToUse}'
+                        sm:
+                          classPattern: 'sm:col-span-{@numbersOfColumnsToUse}'
+                        md:
+                          classPattern: 'md:col-span-{@numbersOfColumnsToUse}'
+                        lg:
+                          classPattern: 'lg:col-span-{@numbersOfColumnsToUse}'
+                        xl:
+                          classPattern: 'xl:col-span-{@numbersOfColumnsToUse}'
+                        xxl:
+                          classPattern: 'xxl:col-span-{@numbersOfColumnsToUse}'
             
