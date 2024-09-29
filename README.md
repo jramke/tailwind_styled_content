@@ -1,10 +1,15 @@
 # Tailwind Styled Content
 
+![Total downloads](https://typo3-badges.dev/badge/tailwind_styled_content/downloads/shields.svg)
+![Stability](https://typo3-badges.dev/badge/tailwind_styled_content/stability/shields.svg)
+![TYPO3 versions](https://typo3-badges.dev/badge/tailwind_styled_content/typo3/shields.svg)
+![Latest version](https://typo3-badges.dev/badge/tailwind_styled_content/version/shields.svg)
+
 Easily use TYPO3 with Tailwind CSS. Tailwind Styled Content is an alternative for `fluid_styled_content` using Tailwind CSS, providing a clean, robust and modern starting point for building websites with TYPO3.
 
 ![TYPO3 + Tailwind CSS](https://github.com/user-attachments/assets/a2819c93-4682-4e61-9486-03519adad2ad)
 
-## Whats covered
+## What's Included
 
 ### Content Elements
 
@@ -12,16 +17,16 @@ Tailwind Styled Content ships basic templates for (not all) default content elem
 - Simplified content elements layout
 - Removed and added some `frame_class` options
 - New `.frame` spacing api
-- Overhaul of the textmedia template and gallery partial
+- Overhauled textmedia template and gallery partial
 - Removed and added some `imageorient` options
 - Disabled the following content elements 
     - textpic (in favor of textmedia)
     - table (in favor of RTE table)
     - bullets (in favor of RTE lists)
 
-*Check the individual files for more information.*
+*Refer to the individual files for more details.*
 
-We also introduce a `Prose` partial that can be used like this:
+We’ve also introduced a `Prose` partial, which can be used as follows:
 
 ```html
 <f:render partial="Prose" contentAs="content">
@@ -31,42 +36,45 @@ We also introduce a `Prose` partial that can be used like this:
 
 ### Form Elements
 
-We override the default form element classes via yaml, because they where designed to work with Bootstrap. **Currently the gridrow element is not ported to tailwind yet**. We use the form templates of `version2`.
+We override the default form element classes via YAML, as they were originally designed for Bootstrap. We use the form templates of `version2`.
 
 ### Tailwind Plugins and Preset
 
-Tailwind Styled Content comes with a tailwind preset, a safelist and a plugin which you can directly import from the composer package. No need for a additional npm package.
+Tailwind Styled Content comes with a Tailwind preset, a safelist and a plugin, which you can directly import from the composer package. No need for an additional npm package.
 
-The preset extends the default tailwind theme to make it more suitable for building TYPO3 websites rather than web app interfaces. It also includes the needed plugins. Tailwind Styled Content includes [daisyUI](https://daisyui.com/) plugin which makes tailwind usable for non-component-based JS frameworks and [tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) plugin to enhance the RTE and default heading styling.
+The preset extends Tailwind's default theme to better suit TYPO3 websites. It also includes the needed plugins like [daisyUI](https://daisyui.com/), which makes Tailwind usable for non-component-based JS frameworks and [tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) for RTE and default heading styling.
 
-The Tailwind Styled Content plugin enhances the `.frame` component, which is used for each content element. It adds robust spacing to your elements, which also can be adjusted by the combo classes applied by the `space_before_class` and `space_after_class` fields in the backend. The combo classes pattern looks like this: `frame-space-(before|after)-(none|small|large)`. For customization details, you can read more in the [customization section](#customization)
+The Tailwind Styled Content plugin uses the `.frame` class to add robust and flexible spacing to all content elements. The combo classes added by the `space_before_class` and `space_after_class` fields, to adjusts the spacing of individual content elements, look like this: `frame-space-(before|after)-(none|small|large)`. For further customization, check out the [customization section](#customization).
 
-## Getting started
+## Getting Started
 
 ### 1. Install Tailwind Styled Content (TSC)
 
-Install Tailwind Styled Content via Composer.
+Install it via Composer:
+
 ```bash
-ddev composer req jramke/tailwind-styled-content
+composer req jramke/tailwind-styled-content
 ```
-NOTE: If you are using a legacy installation you have to install the extension via the extension manager in the backend. Remember to adapt the paths in the generated tailwind config to your setup.
+
+*Note:* For legacy installations, use the Extension Manager in the backend. Make sure to adjust the paths in your Tailwind config.
 
 ### 2. Initialize Tailwind
 
-Then, you need to initialize Tailwind. The recommended way is to use PostCSS. Follow the steps here: [Tailwind CSS Installation using PostCSS](https://tailwindcss.com/docs/installation/using-postcss).
+To initialize Tailwind, use PostCSS as recommended. Follow these instructions: [Tailwind CSS Installation using PostCSS](https://tailwindcss.com/docs/installation/using-postcss).
 
-The easiest way to get your `main.css` running is using `vite-asset-collector`, a great extension from [Simon Praetorius](https://github.com/s2b). Then you simply need to  import the css file in your js entry file. Read more here: [Vite Asset Collector](https://github.com/s2b/vite-asset-collector).
+For an easy setup, use `vite-asset-collector` by [Simon Praetorius](https://github.com/s2b) and simply import the your CSS file in your JS entry file. More info here: [Vite Asset Collector](https://github.com/s2b/vite-asset-collector).
 
-### 3. Install additional dependencies
+### 3. Install Additional Dependencies
 
-As mentioned, Tailwind Styled Content is based on `daisyUI` and `@tailwindcss/typography` So we need to install them as dev dependencies as well.
+As Tailwind Styled Content relies on `daisyUI` and `@tailwindcss/typography`, you need to install them as development dependencies:
+
 ```bash
 npm i -D daisyui@latest @tailwindcss/typography
 ```
 
-### 4. Setup your tailwind config
+### 4. Set Up Your Tailwind Config
 
-Now you have to add Tailwind Styled Content to your `tailwind.config.js`. You have to set the `content` paths and `safelist` yourself, because these values arent merged with the preset.
+Add Tailwind Styled Content to your `tailwind.config.js`. You'll need to define the `content` paths and `safelist` yourself, as they’re not merged with the preset.
 
 ```js
 import { preset, safelist } from './vendor/jramke/tailwind-styled-content';
@@ -85,17 +93,21 @@ module.exports = {
 ## Customization
 
 ### Tailwind
-For basic Tailwind customization you can simply follow the [Tailwind docs](https://tailwindcss.com/docs/configuration).
+
+For basic Tailwind customization, refer to the [Tailwind docs](https://tailwindcss.com/docs/configuration).
 
 ### daisyUI
-For customizing daisyUI i would recommend [this approach](https://daisyui.com/docs/themes/#-7), where we extend an existing theme with the needed brand colors, because we often dont need dark and light mode for simple websites. For more information check out [their docs](https://daisyui.com/docs/customize/).
+
+To customize daisyUI, I would recommend [this approach](https://daisyui.com/docs/themes/#-7), where you extend an existing theme with your brand colors. More details are available in the [daisyUI docs](https://daisyui.com/docs/customize/).
 
 ### Tailwind Styled Content (TSC)
-For customizing Tailwind Styled Content you can use the `tsc` object in your Tailwind config.
 
-You can adjust the generated CSS for the `.frame` component by changing the default vertical padding, the default padding for a given Tailwind breakpoint and the amount of increase or decrease when using the combo classes. If you set `frame: false` you can opt-out for the styles and use your own.
+To customize Tailwind Styled Content, use the `tsc` object in your Tailwind config.
+
+You can tweak the `.frame` component’s CSS by adjusting the default vertical padding, breakpoint-specific padding, and spacing for the combo classes. Set `frame: false` to opt-out of these styles entirely.
 
 The default config looks like this:
+
 ```js
 tsc: {
     frame: {
@@ -113,42 +125,46 @@ tsc: {
 
 ### Tailwind Typography
 
-For customizing the typography styles you can simply extend your tailwind config or override the `Prose.html` partial in your distribution extension and add the desired element modifiers or other classes. Read more [here](https://tailwindcss.com/docs/typography-plugin).
-
+To customize the typography styles, extend your Tailwind config or override the `Prose.html` partial in your distribution extension. Learn more [here](https://tailwindcss.com/docs/typography-plugin).
 
 ## Development
 
-The development setup uses ddev and is based on this [example](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions).
+The development setup uses DDEV and is based on this [example](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions).
 
-### Start ddev project
+### Start DDEV Project
+
 ```bash
 ddev start
 ```
 
-### Install JavaScript dependencies
+### Install JavaScript Dependencies
+
 ```bash
 npm install
 ```
 
 ### TYPO3
 
-**1. Install TYPO3 Development environment in needed version**
+**1. Setup the TYPO3 development environment for the needed version**
+
 ```bash
 ddev install-v11
 ddev install-v12
 ddev install-v13
 ```
-The installations are then available under:
+
+The installations are then available at:
 - https://v11.tailwind-styled-content.ddev.site
 - https://v12.tailwind-styled-content.ddev.site
 - https://v13.tailwind-styled-content.ddev.site
 
 You can log into the backend with username `admin` and password `Password1#`.
 
-**2. Add the Tailwind Styled Content static typoscript file**
+**2. Add the Tailwind Styled Content static TypoScript file**
 
-**3. Include tailwinds generated css in the TYPO3 page**
-```
+**3. Include the generated Tailwind CSS in your TYPO3 page**
+
+```typoscript
 page.includeCSS {
     tailwind = /output.css
     tailwind {
@@ -160,9 +176,9 @@ page.includeCSS {
 
 **4. Start the Tailwind CLI build process**
 
-Replace `[VERSION]` with the installation you want to run this command in. For example `v12`.  
+Replace `[VERSION]` with the desired installation version (e.g. `v12`):
+
 ```bash
 ddev exec -d /var/www/html/[VERSION] npm run tailwind
 ```
-
 
