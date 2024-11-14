@@ -1,10 +1,10 @@
-import { preset, safelist } from '../../tailwind_styled_content/index.js';
- 
+import { preset, safelist } from './vendor/jramke/tailwind-styled-content';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	presets: [preset],
 	content: [
-		'./vendor/jramke/tailwind-styled-content/**/*.{html,yaml,typoscript,tsconfig}',
+		'./vendor/jramke/tailwind-styled-content/**/*.{html,yaml,typoscript,tsconfig}'
 	],
-	safelist: [...safelist],
+	safelist: [...safelist]
 }

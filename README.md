@@ -166,7 +166,7 @@ You can log into the backend with username `admin` and password `Password1#`.
 
 ```typoscript
 page.includeCSS {
-    tailwind = /output.css
+    tailwind = output.css
     tailwind {
     	disableCompression = 1
     	excludeFromConcatenation = 1
