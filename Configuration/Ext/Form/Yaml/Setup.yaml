@@ -178,7 +178,7 @@ TYPO3:
                     containerClassAttribute: 'form-control form-element-url mb-4'
                     elementClassAttribute: 'input input-bordered'
                     labelClassAttribute: 'label label-text justify-start'
-            GridRow:              
+            GridRow:
               variants:
                 -
                   properties:
@@ -198,4 +198,3 @@ TYPO3:
                           classPattern: 'xl:col-span-{@numbersOfColumnsToUse}'
                         xxl:
                           classPattern: 'xxl:col-span-{@numbersOfColumnsToUse}'
-            

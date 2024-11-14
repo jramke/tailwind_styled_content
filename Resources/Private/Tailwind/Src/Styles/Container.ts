@@ -2,7 +2,7 @@ import type { PluginAPI } from "tailwindcss/types/config";
 
 export function containerStyles(pluginApi: PluginAPI) {
     const { addComponents } = pluginApi;
-    
+
     addComponents({
         '.container.none': {
             'max-width': 'none',

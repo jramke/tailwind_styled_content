@@ -4,8 +4,8 @@
     "version": "1.2.0",
     "description": "Fluid templates for TYPO3 content elements with Tailwind CSS.",
     "license": [
-		"GPL-2.0-or-later"
-	],
+        "GPL-2.0-or-later"
+    ],
     "authors": [
         {
             "name": "Joost Ramke",
@@ -14,8 +14,8 @@
     ],
     "require": {
         "php": ">=8.1",
-		"typo3/cms-core": "^11.5 || ^12.4 || ^13.0 || dev-main",
-		"typo3/cms-fluid": "^11.5 || ^12.4 || ^13.0 || dev-main"
+        "typo3/cms-core": "^11.5 || ^12.4 || ^13.0 || dev-main",
+        "typo3/cms-fluid": "^11.5 || ^12.4 || ^13.0 || dev-main"
     },
     "scripts": {
         "prepare-release": [

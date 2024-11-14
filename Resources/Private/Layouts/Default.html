@@ -1,15 +1,15 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    
+
     <f:variable name="frameClass">
         <f:join value="{
-            0: 'frame frame-type-{data.CType} frame-layout-{data.layout}', 
-            1: '{f:if(condition: data.space_before_class, then: \' frame-space-before-{data.space_before_class}\')}', 
+            0: 'frame frame-type-{data.CType} frame-layout-{data.layout}',
+            1: '{f:if(condition: data.space_before_class, then: \' frame-space-before-{data.space_before_class}\')}',
             2: '{f:if(condition: data.space_after_class, then: \' frame-space-after-{data.space_after_class}\')}'
         }" />
     </f:variable>
 
-    <div 
-        id="c{data.uid}" 
+    <div
+        id="c{data.uid}"
         class="{frameClass -> f:spaceless()}">
         <div class="container{f:if(condition: '{data.frame_class}', then: ' {data.frame_class}')}">
             <f:if condition="{data._LOCALIZED_UID}">
@@ -24,5 +24,5 @@
             </f:render>
         </div>
     </div>
-        
+
 </html>

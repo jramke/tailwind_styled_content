@@ -19,7 +19,7 @@ Tailwind Styled Content ships basic templates for (not all) default content elem
 - New `.frame` spacing api
 - Overhauled textmedia template and gallery partial
 - Removed and added some `imageorient` options
-- Disabled the following content elements 
+- Disabled the following content elements
     - textpic (in favor of textmedia)
     - table (in favor of RTE table)
     - bullets (in favor of RTE lists)
@@ -78,15 +78,15 @@ Add Tailwind Styled Content to your `tailwind.config.js`. You'll need to define 
 
 ```js
 import { preset, safelist } from './vendor/jramke/tailwind-styled-content';
- 
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	presets: [preset],
-	content: [
-		'./vendor/jramke/tailwind-styled-content/**/*.{html,yaml,typoscript,tsconfig}',
-		'packages/**/*.{html,js,yaml,typoscript,tsconfig}',
-	],
-	safelist: [...safelist],
+    presets: [preset],
+    content: [
+        './vendor/jramke/tailwind-styled-content/**/*.{html,yaml,typoscript,tsconfig}',
+        'packages/**/*.{html,js,yaml,typoscript,tsconfig}',
+    ],
+    safelist: [...safelist],
 }
 ```
 
@@ -168,8 +168,8 @@ You can log into the backend with username `admin` and password `Password1#`.
 page.includeCSS {
     tailwind = output.css
     tailwind {
-    	disableCompression = 1
-    	excludeFromConcatenation = 1
+        disableCompression = 1
+        excludeFromConcatenation = 1
     }
 }
 ```
@@ -181,4 +181,3 @@ Replace `[VERSION]` with the desired installation version (e.g. `v12`):
 ```bash
 ddev exec -d /var/www/html/[VERSION] npm run tailwind
 ```
-

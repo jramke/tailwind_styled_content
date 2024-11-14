@@ -51,21 +51,21 @@ export function frameStyles(frameConfig: TscConfig['frame'], pluginApi: PluginAP
         }
     };
     addComponents(defaultFrame);
-    
+
     const directions = ['before', 'after'] as const;
-	const sizes = {
+    const sizes = {
         none: '0px',
-		small: 'calc(var(--frame-spacing-default) / var(--frame-spacing-small-multiplier))',
-		large: 'calc(var(--frame-spacing-default) * var(--frame-spacing-large-multiplier))',
-	};
-    
+        small: 'calc(var(--frame-spacing-default) / var(--frame-spacing-small-multiplier))',
+        large: 'calc(var(--frame-spacing-default) * var(--frame-spacing-large-multiplier))',
+    };
+
     const frameUtilities = {};
-	directions.forEach((direction) => {
-		Object.entries(sizes).forEach(([size, value]) => {
-			frameUtilities[`.frame.frame-space-${direction}-${size}`] = {
-				[`--frame-spacing-${direction}`]: value,
-			};
-		});
-	});
+    directions.forEach((direction) => {
+        Object.entries(sizes).forEach(([size, value]) => {
+            frameUtilities[`.frame.frame-space-${direction}-${size}`] = {
+                [`--frame-spacing-${direction}`]: value,
+            };
+        });
+    });
     addComponents(frameUtilities);
 }

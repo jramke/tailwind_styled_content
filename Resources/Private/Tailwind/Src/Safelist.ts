@@ -5,7 +5,7 @@ function safelistGrid(minGridCols: number, maxGridCols: number) {
     }
 
     if (gridColsRegexPatterns.length > 0) {
-        return { 
+        return {
             pattern: new RegExp(gridColsRegexPatterns.join('|')),
             variants: ['sm', 'md', 'lg', 'xl', '2xl'],
         };
