@@ -1,7 +1,7 @@
 {
     "name": "jramke/tailwind-styled-content",
     "type": "typo3-cms-extension",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Fluid templates for TYPO3 content elements with Tailwind CSS.",
     "license": [
         "GPL-2.0-or-later"
