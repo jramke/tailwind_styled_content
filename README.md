@@ -160,9 +160,12 @@ The installations are then available at:
 
 You can log into the backend with username `admin` and password `Password1#`.
 
-**2. Add the Tailwind Styled Content static TypoScript file**
+**2. Restore base database**
+```bash
+ddev snapshot restore dev-base
+```
 
-**3. Include the generated Tailwind CSS in your TYPO3 page**
+or manually include the Tailwind Styled Content static TypoScript file and add this to the template:
 
 ```typoscript
 page.includeCSS {
