@@ -84,7 +84,7 @@ module.exports = {
     presets: [preset],
     content: [
         './vendor/jramke/tailwind-styled-content/**/*.{html,yaml,typoscript,tsconfig}',
-        'packages/**/*.{html,js,yaml,typoscript,tsconfig}',
+        'packages/**/*.{html,js,yaml,typoscript,tsconfig,xml}',
     ],
     safelist: [...safelist],
 }
