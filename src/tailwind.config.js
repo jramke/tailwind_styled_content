@@ -1,4 +1,4 @@
-import { preset, safelist } from './vendor/jramke/tailwind-styled-content';
+import { preset, safelist } from '../../tailwind_styled_content';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
