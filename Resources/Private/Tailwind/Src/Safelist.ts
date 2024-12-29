@@ -1,22 +1,36 @@
+// TODO: adjust safelist handling after stable tailwind v4
+import * as fs from 'fs';
+import * as path from 'path';
+
 function safelistGrid(minGridCols: number, maxGridCols: number) {
-    let gridColsRegexPatterns: string[] = [];
+    let classes: string[] = [];
+
     for (let i = minGridCols; i <= maxGridCols; i++) {
-        gridColsRegexPatterns.push(`(col-span|grid-cols)-${i}`);
+        classes.push(`col-span-${i}`, `grid-cols-${i}`);
     }
 
-    if (gridColsRegexPatterns.length > 0) {
-        return {
-            pattern: new RegExp(gridColsRegexPatterns.join('|')),
-            variants: ['sm', 'md', 'lg', 'xl', '2xl'],
-        };
-    } else {
-        return null;
-    }
+    const variants = ['sm', 'md', 'lg', 'xl', '2xl'];
+
+    let classesWithVariants: string[] = [];
+    variants.forEach(variant => {
+        classes.map(className => {
+            classesWithVariants.push(`${variant}:${className}`);
+        });
+    });
+
+    return [...classes, ...classesWithVariants];
 };
 
-export default [
-    safelistGrid(1, 12),
-    {
-        pattern: /text-(left|center|right)/,
-    },
-];
+(() =>  {
+    const safelist = [
+        ...safelistGrid(1, 12),
+        ...['text-center', 'text-left', 'text-right'],
+    ];    
+
+    const filePath = path.resolve(import.meta.dirname, '../__tsc.safelist');
+
+    fs.writeFileSync(filePath, safelist.join('\n'), 'utf8');
+    console.log(`Safelist classes written to ${filePath}`);
+
+    return safelist;
+})();

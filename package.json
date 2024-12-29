@@ -1,10 +1,13 @@
 {
+    "type": "module",
     "devDependencies": {
+        "@tailwindcss/cli": "^4.0.0-beta.8",
+        "@tailwindcss/forms": "^0.5.9",
         "@tailwindcss/typography": "^0.5.15",
-        "daisyui": "^4.12.10",
-        "tailwindcss": "^3.4.12"
+        "tailwindcss": "^4.0.0-beta.8"
     },
     "scripts": {
-        "tailwind": "npx tailwindcss -i ./input.css -o ./public/output.css --watch"
+        "safelist": "tsx ./Resources/Private/Tailwind/Src/Safelist.ts",
+        "tailwind": "npx @tailwindcss/cli -i ./input.css -o ./public/output.css --watch"
     }
 }

@@ -1,0 +1,21 @@
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+@layer components {
+    .container.none {
+        max-width: none;
+    }
+    .container.full {
+        max-width: none;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .frame:has(.container.indent-right) {
+        margin-right: '33.33%';
+    }
+    .frame:has(.container.indent-left) {
+        margin-left: '33.33%';
+    }
+}

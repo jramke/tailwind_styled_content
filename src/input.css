@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms" {
+    strategy: "class";
+}
+
+/* TODO: how can we use the @import programmatically inside the plugin so we only need one line */
+@import "./vendor/jramke/tailwind-styled-content";
+@plugin "./vendor/jramke/tailwind-styled-content";

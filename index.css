@@ -1,0 +1,4 @@
+/* TODO: adjust safelist handling after stable tailwind v4 */
+@source "./**/*.{html,yaml,typoscript,tsconfig,safelist}";
+
+@import "./Resources/Private/Tailwind";
