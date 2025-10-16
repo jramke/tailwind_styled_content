@@ -1,3 +1,7 @@
+> [!NOTE]
+> This extension is currently not maintained. I recommend using Tailwind v4 instead of v3 and just copy paste the things you need from this extension directly into your sitepackage.
+> Also DaisyUI might not be the best choice for your project anymore. Maybe you would like to consider [Fluid Primitives](https://fluid-primitives.joostramke.com/).
+
 # Tailwind Styled Content
 
 ![Total downloads](https://typo3-badges.dev/badge/tailwind_styled_content/downloads/shields.svg)
