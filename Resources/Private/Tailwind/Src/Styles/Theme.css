@@ -1,0 +1,6 @@
+@theme {
+    --spacing-reading: 80ch;
+    --spacing-form: 2rem;
+    --spacing-form-field: 0.4rem;
+    --color-error: #FE5861;
+}

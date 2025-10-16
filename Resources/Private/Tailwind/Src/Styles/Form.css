@@ -1,0 +1,63 @@
+@utility form-legend {
+    @apply font-semibold;
+}
+@utility form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-form-field);
+}
+@utility form-label {
+    @apply text-sm font-medium;
+}
+@utility form-input {
+    @apply py-1 px-2 sm:text-sm;
+}
+@utility form-error {
+    @apply text-sm text-error;
+}
+@utility form-description {
+    @apply text-[0.8rem] text-neutral-600;
+}
+@utility form-navigation {
+    display: flex;
+    gap: var(--spacing-form-field);
+}
+
+@layer utilities {
+
+    /* if these where declared using the @utility they would get overriden by their defaults from the forms plugin */
+    .form-select {
+        @apply form-input;
+    }
+    .form-multiselect {
+        @apply form-input;
+    }
+    .form-textarea {
+        @apply form-input;
+        --padding-y: calc(var(--spacing) * 1);
+        --border-width: 1px;
+        min-height: calc(3lh + (2 * (var(--padding-y) + var(--border-width))));
+        max-height: calc(8lh + (2 * (var(--padding-y) + var(--border-width))));
+        field-sizing: content;
+    }
+
+    .form-field:not(:last-child):not(:has(+ .form-description)) {
+        margin-bottom: var(--spacing-form);
+    }
+    .form-field:has([aria-invalid="true"]) .form-label:before {
+        @apply bg-error;
+        content: '';
+        display: inline-block;
+        margin-inline-end: .2em;
+        width: 1em;
+        height: 1em;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-x'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m15 9-6 6'/%3E%3Cpath d='m9 9 6 6'/%3E%3C/svg%3E");
+        mask-size: contain;
+        transform: translateY(2px);
+    }
+    .form-input[aria-invalid="true"], .form-textarea[aria-invalid="true"], .form-radio[aria-invalid="true"], .form-checkbox[aria-invalid="true"] {
+        @apply border-error ring-error;   
+    }
+
+    
+}

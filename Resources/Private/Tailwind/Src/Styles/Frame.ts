@@ -1,5 +1,4 @@
-import type { PluginAPI } from "tailwindcss/types/config";
-import type { TscConfig } from "../../types";
+import type { TscConfig, PluginAPI } from "../../types";
 
 export function frameStyles(frameConfig: TscConfig['frame'], pluginApi: PluginAPI) {
     if (frameConfig === false) {

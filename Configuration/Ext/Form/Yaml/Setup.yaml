@@ -14,175 +14,180 @@ TYPO3:
                   renderingOptions:
                     formNavigation:
                       btnNextClassAttribute: 'btn btn-primary'
-                      btnPreviousClassAttribute: 'btn btn-outline btn-primary'
+                      btnPreviousClassAttribute: 'btn btn-secondary'
                       btnSubmitClassAttribute: 'btn btn-primary'
+                      navigationWrapperClassAttribute: 'mt-form'
                     fieldProperties:
-                      descriptionClassAttribute: 'form-text'
-                      errorClassAttribute: 'peer [&_input]:input-error [&_[type=checkbox]]:checkbox-error [&_[type=file]]:file-input-error [&_[type=radio]]:radio-error [&_select]:select-error [&_textarea]:textarea-error'
-                      errorMsgClassAttribute: 'label label-text-alt justify-start text-error peer-[.form-control]:-mt-4'
+                      descriptionClassAttribute: 'form-description'
+                      errorClassAttribute: ''
+                      errorMsgClassAttribute: 'form-error'
                       requiredMarkClassAttribute: 'required'
                       visuallyHiddenClassAttribute: 'sr-only'
             SummaryPage:
               variants:
                 -
                   renderingOptions:
-                    listRowClassAttribute: 'grid grid-cols-2 gap-4'
+                    listClassAttribute: 'space-y-2'
+                    listRowClassAttribute: 'grid grid-cols-2 gap-form'
+                    labelWrapperClassAttribute: 'form-label'
+                    valueWrapperClassAttribute: ''
 
             # Form elements
             AdvancedPassword:
               variants:
                 -
                   properties:
-                    fieldsetClassAttribute: 'form-control form-element-advancedpassword mb-4'
-                    containerClassAttribute: 'form-control mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    confirmationClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
-                    renderFieldset: 0
+                    fieldsetClassAttribute: 'form-field form-field-advancedpassword'
+                    containerClassAttribute: 'form-field'
+                    elementClassAttribute: 'form-input'
+                    confirmationClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
+                    legendVisuallyHidden: 0
             Checkbox:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-checkbox mb-4'
-                    elementClassAttribute: 'checkbox'
-                    labelTextClassAttribute: 'label-text'
-                    labelClassAttribute: 'label cursor-pointer justify-start gap-2'
+                    containerClassAttribute: 'form-field form-field-checkbox'
+                    elementClassAttribute: 'form-checkbox'
+                    labelTextClassAttribute: 'leading-none form-label'
+                    labelClassAttribute: 'flex items-center gap-2'
             ContentElement:
               variants:
                 1:
                   properties:
-                    outerContainerClassAttribute: 'mb-4 [&_.container]:max-w-none [&_.frame]:py-0'
+                    outerContainerClassAttribute: 'form-field form-field-contentelement'
             CountrySelect:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-select mb-4'
-                    elementClassAttribute: 'select select-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-select'
+                    elementClassAttribute: 'form-select'
+                    labelClassAttribute: 'form-label'
             Date:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-date mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-date'
+                    elementClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
             DatePicker:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-date mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-date'
+                    elementClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
             SingleSelect:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-select mb-4'
-                    elementClassAttribute: 'select select-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-select'
+                    elementClassAttribute: 'form-select'
+                    labelClassAttribute: 'form-label'
             StaticText:
               variants:
                 1:
                   properties:
-                    containerClassAttribute: 'form-element-statictext mb-4 [&>h2]:font-bold [&>h2]:text-base [&>h2]:mb-1 [&>p]:label-text'
+                    containerClassAttribute: 'form-field form-field-statictext'
             Email:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-email mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-email'
+                    elementClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
             Fieldset:
               variants:
                 -
                   properties:
-                    elementClassAttribute: 'form-element-fieldset mb-4 [&>legend]:font-bold'
+                    elementClassAttribute: 'form-field form-field-fieldset gap-0 [&>legend]:form-legend [&>legend]:mb-form-field'
             FileUpload:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-fileupload mb-4'
+                    containerClassAttribute: 'form-field form-field-fileupload'
                     elementClassAttribute: 'file-input file-input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    labelClassAttribute: 'form-label'
             ImageUpload:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-imageupload mb-4'
+                    containerClassAttribute: 'form-field form-field-imageupload'
                     elementClassAttribute: 'file-input file-input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    labelClassAttribute: 'form-label'
             MultiCheckbox:
               variants:
                 -
                   properties:
-                    fieldsetClassAttribute: 'mb-4 [&>legend]:label [&>legend]:label-text [&>legend]:justify-start'
-                    containerClassAttribute: 'form-control form-element-checkbox'
-                    elementClassAttribute: 'checkbox'
-                    labelTextClassAttribute: 'label-text'
-                    labelClassAttribute: 'label cursor-pointer justify-start gap-2'
+                    fieldsetClassAttribute: 'form-field form-field-checkbox [&>legend]:form-legend [&>legend]:mb-form-field'
+                    containerClassAttribute: 'mb-2 last:mb-0'
+                    elementClassAttribute: 'form-checkbox'
+                    labelTextClassAttribute: 'form-label leading-none'
+                    labelClassAttribute: 'flex items-center gap-2'
             MultiSelect:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-multiselect mb-4'
-                    elementClassAttribute: 'select select-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-multiselect'
+                    elementClassAttribute: 'form-multiselect'
+                    labelClassAttribute: 'form-label'
             Number:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-number mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-number'
+                    elementClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
             Password:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-password mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-password'
+                    elementClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
             RadioButton:
               variants:
                 -
                   properties:
-                    fieldsetClassAttribute: 'mb-4 [&>legend]:label [&>legend]:label-text [&>legend]:justify-start'
-                    containerClassAttribute: 'form-control form-element-radio'
-                    elementClassAttribute: 'radio'
-                    labelTextClassAttribute: 'label-text'
-                    labelClassAttribute: 'label cursor-pointer justify-start gap-2'
+                    fieldsetClassAttribute: 'form-field form-field-radiobutton [&>legend]:form-legend [&>legend]:mb-form-field'
+                    containerClassAttribute: 'mb-2 last:mb-0'
+                    elementClassAttribute: 'form-radio'
+                    labelTextClassAttribute: 'form-label leading-none'
+                    labelClassAttribute: 'flex items-center gap-2'
+                    legendVisuallyHidden: 0
             Telephone:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-phone mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-phone'
+                    elementClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
             Text:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-text mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-text'
+                    elementClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
             Textarea:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-textarea mb-4'
-                    elementClassAttribute: 'textarea textarea-bordered h-24'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-textarea'
+                    elementClassAttribute: 'form-textarea'
+                    labelClassAttribute: 'form-label'
             Url:
               variants:
                 -
                   properties:
-                    containerClassAttribute: 'form-control form-element-url mb-4'
-                    elementClassAttribute: 'input input-bordered'
-                    labelClassAttribute: 'label label-text justify-start'
+                    containerClassAttribute: 'form-field form-field-url'
+                    elementClassAttribute: 'form-input'
+                    labelClassAttribute: 'form-label'
             GridRow:
               variants:
                 -
                   properties:
-                    elementClassAttribute: 'form-element form-element-gridrow grid gap-x-4'
+                    elementClassAttribute: 'form-element form-field-gridrow grid gap-form'
                     gridColumnClassAutoConfiguration:
                       gridSize: 12
                       viewPorts:

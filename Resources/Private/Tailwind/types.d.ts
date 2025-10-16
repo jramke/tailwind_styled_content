@@ -1,3 +1,5 @@
+import createPlugin from 'tailwindcss/plugin';
+
 export type TscConfig = {
     frame: {
         default: string;
@@ -8,3 +10,6 @@ export type TscConfig = {
         };
     } | false;
 };
+
+// Somehow not exported by Tailwind
+export type PluginAPI = Parameters<Parameters<typeof createPlugin>[0]>[0];
